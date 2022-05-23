@@ -1,0 +1,48 @@
+$desktop: 1024px;
+
+.nav-container {
+    @media (max-width: #{$desktop}) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: fixed;
+        background-color: red;
+    }
+    @media (min-width: #{$desktop}) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 10vh;
+        position: fixed;
+        background-color: aqua;
+
+    }
+}
+
+.nav-left {
+    @media (max-width: #{$desktop}) {
+        
+    }
+    @media (min-width: #{$desktop}) {
+        margin-left: 2vw;
+    }
+}
+
+.nav-right {
+    @media (max-width: #{$desktop}) {
+        
+    }
+    @media (min-width: #{$desktop}) {
+        margin-right: 2vw;
+    }
+}
+
+.nav-right .nav-link {
+    @media (max-width: #{$desktop}) {
+        
+    }
+    @media (min-width: #{$desktop}) {
+        margin-right: 2vw;
+    }
+}
