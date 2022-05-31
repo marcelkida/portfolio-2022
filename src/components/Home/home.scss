@@ -19,6 +19,22 @@ $desktop: 1024px;
     font-family: 'Gerbil';
     src: url(../../fonts/gerbil.otf) format('opentype');
 }
+//Loader
+.loader{
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ghost-gif{
+    height: 20vh;
+    
+}
+
 .home-main{
     @media (max-width: #{$desktop}) {
         padding: 4vw;
@@ -37,9 +53,11 @@ $desktop: 1024px;
     @media (max-width: #{$desktop}) {
         margin-top: 10%;
         overflow: hidden;
+        height: 88vh;
     }
     @media (min-width: #{$desktop}) {
         position: relative;
+        height: 88vh;
     } 
 }
 .home-text{
