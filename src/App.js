@@ -9,11 +9,14 @@ import Navbar from './components/Navbar'
 import ThreeTest from './components/ThreeTest';
 import Home from './components/Home/Home';
 import About from './components/About/About'
+import AnimatedCursor from 'react-animated-cursor'
+
 
 function App() {
   return (
     <Router>
       <Navbar/>
+      <AnimatedCursor/>
       <Routes>
           <Route exact path="/" element={<Home />}>
             

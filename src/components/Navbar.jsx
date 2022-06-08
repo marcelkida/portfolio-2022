@@ -5,14 +5,14 @@ function Navbar() {
     return (
         <div className='nav-container'>
             <div className='nav-left'>
-                Marcel Kida
+                marcel kida
             </div>
             <div className='nav-right'>
                 <a className='nav-link'>
-                    Work
+                    work
                 </a>
                 <a className='nav-link'>
-                    About
+                    about
                 </a>
             </div>
         </div>

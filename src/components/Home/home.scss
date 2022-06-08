@@ -1,46 +1,66 @@
 $desktop: 1024px;
+
 @font-face {
     font-family: 'Kollektif';
     src: url(../../fonts/Kollektif.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Kollektif-bold';
     src: url(../../fonts/Kollektif-Bold.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Kollektif-italic';
     src: url(../../fonts/Kollektif-Italic.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Kollektif-bolditalic';
     src: url(../../fonts/Kollektif-BoldItalic.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Gerbil';
     src: url(../../fonts/gerbil.otf) format('opentype');
 }
+
 //Loader
-.loader{
+.loader {
     background: #000;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.ghost-gif{
-    height: 20vh;
-    
+    pointer-events: none;
 }
 
-.home-main{
+.loader-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.ghost-gif {
+    height: 20vh;
+
+}
+
+.home-main {
     @media (max-width: #{$desktop}) {
         padding: 4vw;
         overflow: hidden;
 
     }
+
     @media (min-width: #{$desktop}) {
         padding-left: 2vw;
         padding-right: 2vw;
@@ -49,89 +69,157 @@ $desktop: 1024px;
 
     }
 }
-.home-container{
+
+.home-container {
     @media (max-width: #{$desktop}) {
         margin-top: 10%;
         overflow: hidden;
         height: 88vh;
     }
+
     @media (min-width: #{$desktop}) {
         position: relative;
         height: 88vh;
-    } 
+    }
 }
-.home-text{
+
+.home-text {
     @media (max-width: #{$desktop}) {
         position: relative;
         top: 0;
         z-index: 1;
         pointer-events: none;
     }
+
     @media (min-width: #{$desktop}) {
         position: relative;
         top: 0;
         z-index: 1;
         pointer-events: none;
+        
     }
 }
-.ghost{
+
+.ghost-container {
+
+    @media (max-width: #{$desktop}) {
+        position: absolute;
+        height: 100%;
+        width: 96vw;
+        top: 0;
+        z-index: 0;
+    }
+
+    @media (min-width: #{$desktop}) {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        z-index: 0ß;
+    }
+}
+
+.ghost {
+    @media (max-width: #{$desktop}) {
+        position: absolute;
+        overflow: hidden;
+        top: 30%;
+    }
+
+    @media (min-width: #{$desktop}) {
+        position: absolute;
+        top: 0;
+        left: 30vw;
+    }
+}
+
+.hitbox {
+
     @media (max-width: #{$desktop}) {
         position: absolute;
         overflow: hidden;
         top: 30%;
         left: -2vw;
     }
+
     @media (min-width: #{$desktop}) {
         position: absolute;
-        top: 0;
-        left: 30%;
+        overflow: hidden;
+        top: 30%;
+        left: -2vw;
 
     }
+
 }
-.name{
+
+.name {
     @media (max-width: #{$desktop}) {
         font-family: Gerbil;
         font-size: 15vw;
     }
+
     @media (min-width: #{$desktop}) {
         font-family: Gerbil;
         font-size: 10vw;
     }
 }
-.title{
+
+.title {
     @media (max-width: #{$desktop}) {
         margin-top: 10%;
         font-family: Kollektif;
         font-size: 10vw;
     }
+
     @media (min-width: #{$desktop}) {
         margin-top: 2%;
         font-family: Kollektif;
         font-size: 5vw;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
     }
 }
-.title span{
+
+.title span,
+.title .title-span-unique {
     @media (max-width: #{$desktop}) {
         font-family: Kollektif-bold;
         font-size: 10vw;
     }
+
     @media (min-width: #{$desktop}) {
         font-family: Kollektif-bold;
         font-size: 5vw;
     }
 }
 
-.title-span-unique{
-    @media (max-width: #{$desktop}) {
+.title-2 {
+    display: inline;
+}
 
+
+
+.title-span-unique {
+    @media (max-width: #{$desktop}) {
+        pointer-events: visible;
+        cursor: grab;
+        display: inline;
     }
+
     @media (min-width: #{$desktop}) {
         pointer-events: visible;
-        cursor: pointer;
+        cursor: grab;
+        display: inline-block;
 
     }
 }
-.comp{
+
+.unique-container {
+    display: inline;
+}
+
+.comp {
     position: absolute;
     width: 96vw;
 }

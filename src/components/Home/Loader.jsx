@@ -2,14 +2,16 @@ import React from 'react'
 import ghostGif from '../../img/yawn-anim.gif'
 import { motion } from 'framer-motion'
 
-function Loader() {
+function Loader(props) {
+    console.log(props)
     const box = {
+        initial: {
+            opacity: .5,
+        },
         animate: {
-            height: 0,
             opacity: 0,
             transition: {
-                duration: 2,
-                when: "afterChildren"
+                duration: 1,
             }
         }
     }
@@ -19,17 +21,18 @@ function Loader() {
         animate: {
             y: "-5vh", opacity: 1,
             transition: {
-                duration: 4
+                duration: 2
             }
         }
     }
 
     return (
         <motion.div className='loader' id='loader'
-            variants={box} animate="animate" initial="initial"
+            variants={box}
+            animate={props.bool ? "animate" : "initial"}
         >
             <motion.img src={ghostGif} className="ghost-gif"
-            variants={ghost} 
+                variants={ghost} animate="animate" initial="initial"
             />
         </motion.div>
     )
