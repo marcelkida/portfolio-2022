@@ -9,6 +9,7 @@ import Footer from './Footer'
 import ghostGif from '../../img/yawn-anim.gif'
 import Work from './Work'
 import { RGB_ETC1_Format } from 'three'
+import MatterStepThree from '../MatterJSTEST'
 
 
 
@@ -76,7 +77,6 @@ function Home() {
             opacity: 1,
         },
         animate: {
-            opacity: 1,
             height: 0,
             transition: {
                 duration: .5,
@@ -99,16 +99,102 @@ function Home() {
             },
         }
     }
-    
 
-    
+
+
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const vel = useVelocity(x);
-    const input = [-1000, -800, -600, -400, -200, 0, 200, 400, 600 ,800, 1000];
+    const input = [-2000, -1600, -1200, -800, -400, 0, 400, 800, 1200, 1600, 2000];
     const output = ["#d0503e", "#60b92d", "#5d5e96", "#fd9865", "#db2fca", "#000", "#0b8b2f", "#f32c4e", "#baedff", "#3846a6", "#7c43f1"];
-    const color = useTransform(vel, input, output);    
+    const color = useTransform(vel, input, output);
 
+    const banner = {
+        animate: {
+            transition: {
+                delayChildren: 0.4,
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const banner2 = {
+        animate: {
+            transition: {
+                delayChildren: 1,
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+
+    const banner3 = {
+        animate: {
+            transition: {
+                delayChildren: 1.4,
+                staggerChildren: 0.4,
+            },
+        },
+    };
+
+    const letterAni = {
+        initial: { y: 400 },
+        animate: {
+            y: 10,
+            transition: {
+                ease: [0.6, 0.01, -0.05, 0.95],
+                duration: 1,
+            },
+        },
+    };
+    const letterAni2 = {
+        initial: { y: 100, opacity: 0},
+        animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                ease: [0.6, 0.01, -0.05, 0.95],
+                duration: 1,
+            },
+        },
+    };
+
+    const [titleAnimComp, setTitleAnimComp] = useState(false)
+    const AnimatedLetters = ({ title, disabled, delayN }) => (
+        <motion.div
+            className='row-title'
+            variants={disabled ? null : banner}
+            initial='initial'
+            animate='animate'
+            style={{ overflow: "hidden", display: 'inline-block' }}>
+            {[...title].map((letter) => (
+                <motion.div
+                    className='row-letter'
+                    variants={disabled ? null : letterAni} style={{ display: "inline-block" }}>
+                    {letter}
+
+                </motion.div>
+            ))}
+        </motion.div>
+    );
+    const AnimatedLetters2 = ({ title, disabled, delayN }) => (
+        <motion.div
+            className='row-title'
+            variants={disabled ? null : banner2}
+            initial='initial'
+            animate='animate'
+            style={{ overflow: "hidden", display: 'inline-block' }}
+        >
+            {[...title].map((letter) => (
+                <motion.div
+                    className='row-letter'
+                    variants={disabled ? null : letterAni} style={{ display: "inline-block" }}>
+                    {letter}
+
+                </motion.div>
+            ))}
+        </motion.div>
+    );
 
 
     return (
@@ -131,26 +217,39 @@ function Home() {
                 {/* <div className='comp'><Comp/></div> */}
 
                 <div className='home-container'>
-
+                {(isLoaded && animComp) && 
                     <div className='home-text'>
-                        <div className='name'>MARCEL KIDA</div>
-                        <div className='title'>
-                            <div>I am a <span className='title-span'>creative developer</span></div>
-                            <div className='title-2'>
+                        
+                        <motion.div variants={banner} initial='initial'
+                            animate='animate' className='name' style={{ display: 'inline' }}>
+                            <AnimatedLetters title={"MARCEL"} />
+                        </motion.div>
+                        <motion.div variants={banner2} initial='initial'
+                            animate='animate' className='name' style={{ display: 'inline' }}  >
+                            <AnimatedLetters2 title={"KIDA"} />
+                        </motion.div>
+
+                        <motion.div className='title' id='change' variants={banner3} initial="initial" animate="animate" style={{overflow: "visible"}} >
+                            <motion.div variants={(isLoaded && animComp) ? letterAni2 : null} >I am a <span className='title-span'>creative developer</span></motion.div>
+                            <motion.div className='title-2' variants={(isLoaded && animComp) ? letterAni2 : null}>
                                 who loves to make
                                 &nbsp;
                                 <div className='unique-container'>
                                     <motion.div id='unique' className='title-span-unique' drag dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
-                                        style={{color: color,x: x,
-                                        y: y}} dragElastic={.5} dragTransition={{bounceStiffness: 1000, bounceDamping: 5}} whileDrag={{scale: .8, cursor: "grabbing"}}
-                                        animate={{scale: [null,.9,1.1,1]}} transition={{repeat: Infinity, repeatDelay: 3, duration: 1,}} whileHover={{scale:1.1, transition: {ease: 'anticipate'}}}
+                                        style={{
+                                            color: color, x: x,
+                                            y: y,
+                                            overflow: "visible"
+                                        }} dragElastic={.5} dragTransition={{ bounceStiffness: 1000, bounceDamping: 5 }} whileDrag={{ scale: .8, cursor: "grabbing" }}
+                                        animate={{ scale: [1, .95, 1.05, 1] }} transition={{ repeat: Infinity, repeatDelay: 3, duration: 1, }} whileHover={{ scale: 1.1, transition: { ease: 'anticipate' } }}
                                     >unique</motion.div>
                                 </div>
                                 &nbsp;
                                 web experiences.
-                            </div>
-                        </div>
-                    </div>
+                            </motion.div>
+                        </motion.div>
+
+                    </div>}
                     <motion.div className='ghost-container' variants={ghost3D} animate={(isLoaded && animComp) ? "animate" : "initial"} onAnimationComplete={refresh}>
                         <Spline className='ghost' scene="https://prod.spline.design/MajUzanKcZsE6hxv/scene.splinecode"
                             onLoad={onLoad} />
@@ -162,6 +261,7 @@ function Home() {
 
             <Work />
             <Footer />
+            <MatterStepThree/>
 
         </>
     )

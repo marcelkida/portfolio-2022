@@ -204,7 +204,7 @@ $desktop: 1024px;
     @media (max-width: #{$desktop}) {
         pointer-events: visible;
         cursor: grab;
-        display: inline;
+        display: inline-block;
     }
 
     @media (min-width: #{$desktop}) {

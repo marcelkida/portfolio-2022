@@ -1,4 +1,3 @@
-
 .work-title {
     height: 100vh;
     width: 100vw;
@@ -9,11 +8,51 @@
     font-size: 15vw;
 
 }
-.spline-vo2 {
-    position: absolute;
+
+.color-overlay{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: white;
 }
+
+
+.spline-vo2 {
+}
+
 .spline-counselab {
+
+
+}
+
+.work3D{
+    height: 100vh;
+    opacity: .1;
+
+}
+
+#vo2{
+    //background-color: #4954ff;
+}
+
+#counselab{
+    //background-color: #18d4d8;
+}
+body html{
+}
+.work-text{
     position: absolute;
-
-
+    z-index: 3;
+    font-family: Gerbil;
+    font-size: 10vw;
+    mix-blend-mode: screen;
+    color: white;
+}
+.work-scene{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
