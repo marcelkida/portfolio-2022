@@ -1,35 +1,22 @@
 import React, { useEffect, useState, useRef } from 'react'
 import Matter from 'matter-js'
-import point from './point.png'
+import Vo2 from '../img/vo2.png'
 
 const STATIC_DENSITY = 15
-const PARTICLE_SIZE = 10
+const PARTICLE_SIZE = 6
 const PARTICLE_BOUNCYNESS = 0.9
 
 const MatterStepThree = () => {
-    const loadImage = (url, onSuccess, onError) => {
-        const img = new Image();
-        img.onload = () => {
-            onSuccess(img.src);
-        };
-        img.onerror = onError();
-        img.src = url;
-    };
     const boxRef = useRef(null)
     const canvasRef = useRef(null)
 
     const [constraints, setContraints] = useState()
     const [scene, setScene] = useState()
 
-    const [someStateValue, setSomeStateValue] = useState(false)
-
     const handleResize = () => {
         setContraints(boxRef.current.getBoundingClientRect())
     }
 
-    const handleClick = () => {
-        setSomeStateValue(!someStateValue)
-    }
 
     useEffect(() => {
         let Engine = Matter.Engine
@@ -55,14 +42,72 @@ const MatterStepThree = () => {
                 fillStyle: 'blue',
             },
         })
+        const wallLeft = Bodies.rectangle(-10, 0, 10, boxRef.current.getBoundingClientRect().height * 2, {
+            isStatic: true,
+            render: {
+                fillStyle: 'blue',
+            },
+        })
+        console.log(boxRef.current.getBoundingClientRect())
+        const wallRight = Bodies.rectangle(window.innerWidth+10, 0, 10, boxRef.current.getBoundingClientRect().height * 2, {
+            isStatic: true,
+            render: {
+                fillStyle: 'blue',
+            },
+        })
 
-        World.add(engine.world, [floor])
+        World.add(engine.world, [floor, wallLeft, wallRight])
+
         Engine.run(engine)
         Render.run(render)
+
         setContraints(boxRef.current.getBoundingClientRect())
         setScene(render)
 
         window.addEventListener('resize', handleResize)
+
+        var mouse = Matter.Mouse.create(render.canvas),
+        mouseConstraint = Matter.MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: {
+                    visible: false
+                }
+            }
+        });
+
+    World.add(engine.world, mouseConstraint);
+
+    // keep the mouse in sync with rendering
+    Render.mouse = mouse;
+
+    var stack = Matter.Composites.stack(20, -1000, 4, 4, 300, 100, function(x, y) {
+        if (Matter.Common.random() > 0.35) {
+            return Bodies.rectangle(x+(Math.random()*500), y, 300, 100, {
+                render: {
+                    strokeStyle: '#ffffff',
+                    sprite: {
+                        texture: Vo2
+                    }
+                }
+            });
+        } else {
+            return Bodies.circle(x+(Math.random()*500), y, 100, {
+                density: 1,
+                frictionAir: 0.06,
+                restitution: 1,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: Vo2
+                    }
+                }
+            });
+        }
+    });
+
+    World.add(engine.world, stack);
     }, [])
 
     useEffect(() => {
@@ -100,38 +145,6 @@ const MatterStepThree = () => {
         }
     }, [scene, constraints])
 
-    useEffect(() => {
-        // Add a new "ball" everytime `someStateValue` changes
-        if (scene) {
-            let { width } = constraints
-            let randomX = Math.floor(Math.random() * -width) + width
-            Matter.World.add(
-                scene.engine.world,
-                Matter.Bodies.circle(randomX, -PARTICLE_SIZE, PARTICLE_SIZE, {
-                    restitution: PARTICLE_BOUNCYNESS,
-                    render: {
-                        texture: './point.png',
-                    }
-                }),
-            )
-            loadImage(
-                point,
-                url => {
-                    console.log("Success");
-                    Matter.World.add(scene.engine.world,
-                        Matter.Bodies.circle(randomX, -PARTICLE_SIZE, PARTICLE_SIZE, {
-                            restitution: PARTICLE_BOUNCYNESS,
-                            render: {
-                                texture: url,
-                            }
-                        }));
-                },
-                () => {
-                    console.log("Error  Loading ");
-                }
-            );
-        }
-    }, [someStateValue])
 
     return (
         <div
@@ -139,44 +152,21 @@ const MatterStepThree = () => {
                 position: 'relative',
                 border: '1px solid white',
                 padding: '8px',
+                height: '100vh'
             }}
         >
-            <div style={{ textAlign: 'center' }}>Collect Points</div>
-            <div
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr auto',
-                    rowGap: '16px',
-                    marginBottom: '32px',
-                }}
-            >
-                <div>Earned</div>
-                <div>10000</div>
 
-            </div>
 
-            <button
-                style={{
-                    cursor: 'pointer',
-                    display: 'block',
-                    textAlign: 'center',
-                    marginBottom: '16px',
-                    width: '100%',
-                }}
-                onClick={() => handleClick()}
-            >
-                Points
-            </button>
 
             <div
                 ref={boxRef}
+                id="check"
                 style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    pointerEvents: 'none',
                 }}
             >
                 <canvas ref={canvasRef} />

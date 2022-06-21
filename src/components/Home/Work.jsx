@@ -14,8 +14,8 @@ function Work() {
     return (
         <>
             <div className='work-title'>Work</div>
-            <WorkSection url="https://prod.spline.design/qKjbWSVsjewtlFqD/scene.splinecode" color="#4954ff" text="VO2"/>
-            <WorkSection url="https://prod.spline.design/5en87gfDaPUcM1a5/scene.splinecode" color="#18d4d8" text="COUNSELAB"/>
+            <WorkSection url="https://prod.spline.design/qKjbWSVsjewtlFqD/scene.splinecode" color="#4954ff" text="VO2" path="vo2"/>
+            <WorkSection url="https://prod.spline.design/5en87gfDaPUcM1a5/scene.splinecode" color="#18d4d8" text="Counselab"/>
 
         </>
     )

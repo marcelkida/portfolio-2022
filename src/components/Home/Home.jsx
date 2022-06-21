@@ -222,11 +222,11 @@ function Home() {
                         
                         <motion.div variants={banner} initial='initial'
                             animate='animate' className='name' style={{ display: 'inline' }}>
-                            <AnimatedLetters title={"MARCEL"} />
+                            <AnimatedLetters title={"Marcel"} />
                         </motion.div>
                         <motion.div variants={banner2} initial='initial'
                             animate='animate' className='name' style={{ display: 'inline' }}  >
-                            <AnimatedLetters2 title={"KIDA"} />
+                            <AnimatedLetters2 title={"Kida"} />
                         </motion.div>
 
                         <motion.div className='title' id='change' variants={banner3} initial="initial" animate="animate" style={{overflow: "visible"}} >

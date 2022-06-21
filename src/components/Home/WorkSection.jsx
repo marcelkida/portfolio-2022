@@ -16,11 +16,11 @@ function WorkSection(props) {
 
         <>
             <motion.div className='color-overlay' variants={variants} animate={inView ? "animate" : "initial"} style={{ backgroundColor: props.color }}></motion.div>
-            <div ref={ref} className='work-scene'>
+            <motion.div ref={ref} className='work-scene' exit={{y: "-80vh"}}>
                 <Spline scene={props.url} className='work3D' />
-                <div className='work-text'>{props.text}</div>
+                <a href={props.path} className='work-text'>{props.text}</a>
 
-            </div>
+            </motion.div>
         </>
     )
 }
