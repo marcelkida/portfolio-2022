@@ -18,7 +18,6 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <AnimatedCursor />
       <AnimatePresence exitBeforeEnter>
         <Routes>
 

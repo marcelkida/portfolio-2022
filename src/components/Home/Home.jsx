@@ -199,20 +199,20 @@ function Home() {
 
     return (
         <>
-            <motion.div className='loader' id='loader'
-                variants={box}
-                animate={(isLoaded && animComp) ? "animate" : "initial"}
-
-            >
-
-            </motion.div>
-            <div className='loader-container'>
-                <motion.img src={ghostGif} className="ghost-gif"
-                    variants={ghost} animate={(isLoaded && animComp) ? "animate2" : "animate"} initial="initial" onAnimationComplete={handleComp}
-
-                />
-            </div>
-            <div className='home-main'>
+                <motion.div className='loader' id='loader'
+                    variants={box}
+                    animate={(isLoaded && animComp) ? "animate" : "initial"}
+    
+                >
+    
+                </motion.div>
+                <div className='loader-container'>
+                    <motion.img src={ghostGif} className="ghost-gif"
+                        variants={ghost} animate={(isLoaded && animComp) ? "animate2" : "animate"} initial="initial" onAnimationComplete={handleComp}
+    
+                    />
+                </div>
+            <div className='home-main w-screen'>
                 <div style={{ height: "10vh" }}></div>
                 {/* <div className='comp'><Comp/></div> */}
 
@@ -251,7 +251,7 @@ function Home() {
 
                     </div>}
                     <motion.div className='ghost-container' variants={ghost3D} animate={(isLoaded && animComp) ? "animate" : "initial"} onAnimationComplete={refresh}>
-                        <Spline className='ghost' scene="https://prod.spline.design/MajUzanKcZsE6hxv/scene.splinecode"
+                        <Spline className='ghost' scene="https://prod.spline.design/8cUszwNNQXxO9RPr/scene.splinecode"
                             onLoad={onLoad} />
                     </motion.div>
 
@@ -259,9 +259,10 @@ function Home() {
 
             </div>
 
+
             <Work />
             <Footer />
-            <MatterStepThree/>
+
 
         </>
     )

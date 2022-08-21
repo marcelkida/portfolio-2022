@@ -25,11 +25,14 @@ $desktop: 1024px;
     src: url(../../fonts/gerbil.otf) format('opentype');
 }
 
+body{
+}
+
 //Loader
 .loader {
     background: #000;
     width: 100vw;
-    height: 100vh;
+    height: 400vh;
     position: fixed;
     z-index: 100;
     display: flex;
@@ -57,7 +60,6 @@ $desktop: 1024px;
 .home-main {
     @media (max-width: #{$desktop}) {
         padding: 4vw;
-        overflow: hidden;
 
     }
 
@@ -115,7 +117,7 @@ $desktop: 1024px;
         height: 100%;
         width: 100%;
         top: 0;
-        z-index: 0ß;
+        z-index: 0;
     }
 }
 
@@ -160,7 +162,7 @@ $desktop: 1024px;
 
     @media (min-width: #{$desktop}) {
         font-family: Gerbil;
-        font-size: 10vw;
+        font-size: 8vw;
     }
 }
 
@@ -174,7 +176,7 @@ $desktop: 1024px;
     @media (min-width: #{$desktop}) {
         margin-top: 2%;
         font-family: Kollektif;
-        font-size: 5vw;
+        font-size: 3vw;
         pointer-events: none;
         display: flex;
         flex-direction: column;
@@ -190,7 +192,7 @@ $desktop: 1024px;
 
     @media (min-width: #{$desktop}) {
         font-family: Kollektif-bold;
-        font-size: 5vw;
+        font-size: 4vw;
     }
 }
 
