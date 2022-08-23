@@ -67,7 +67,9 @@ body{
         padding-left: 2vw;
         padding-right: 2vw;
         padding-top: 2vh;
-
+        position: sticky;
+        width: 90vw;
+        top: 0;
 
     }
 }
@@ -80,8 +82,10 @@ body{
     }
 
     @media (min-width: #{$desktop}) {
-        position: relative;
-        height: 88vh;
+        position: sticky;
+        margin-bottom: 20vh;
+        top: 0;
+        
     }
 }
 
@@ -116,8 +120,9 @@ body{
         position: absolute;
         height: 100%;
         width: 100%;
-        top: 0;
+        top: 0%;
         z-index: 0;
+        overflow: hidden;
     }
 }
 
@@ -125,7 +130,7 @@ body{
     @media (max-width: #{$desktop}) {
         position: absolute;
         overflow: hidden;
-        top: 30%;
+        top: -10%;
     }
 
     @media (min-width: #{$desktop}) {
@@ -156,13 +161,15 @@ body{
 
 .name {
     @media (max-width: #{$desktop}) {
-        font-family: Gerbil;
         font-size: 15vw;
+        font-family: Kollektif;
+
     }
 
     @media (min-width: #{$desktop}) {
-        font-family: Gerbil;
         font-size: 8vw;
+        font-family: Kollektif;
+
     }
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 function About() {
   return (
-    <div>About</div>
+    <motion.div exit={{opacity: 0}} key="about" className='mt-[5vh] font-kollektif'>About</motion.div>
   )
 }
 

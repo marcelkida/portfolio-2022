@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  Link,
+  useLocation
 } from "react-router-dom";
 import Navbar from './components/Navbar'
 import ThreeTest from './components/ThreeTest';
@@ -12,29 +13,18 @@ import About from './components/About/About'
 import AnimatedCursor from 'react-animated-cursor'
 import Project from './components/Work/Project';
 import { AnimatePresence } from 'framer-motion';
+import AnimatedRoutes from './AnimatedRoutes';
+import Footer from './components/Home/Footer';
 
 
 function App() {
+  
   return (
     <Router>
       <Navbar />
-      <AnimatePresence exitBeforeEnter>
-        <Routes>
+      <AnimatedRoutes></AnimatedRoutes>
+      <Footer />
 
-          <Route exact path="/" element={<Home />}>
-
-          </Route>
-          <Route path="/about" element={<About />}>
-
-          </Route>
-          <Route path="/vo2" element={<Project />}>
-
-          </Route>
-          <Route path="/counselab" element={<About />}>
-
-          </Route>
-        </Routes>
-      </AnimatePresence>
 
     </Router>
   );
