@@ -119,7 +119,7 @@ function About() {
 
 
   return (
-    <motion.div exit={{ opacity: 0 }} key="about" className='pt-[5vh] font-kollektif text-[3.4vw] leading-tight flex flex-col justify-center items-center text-center h-[50vh] lg-h-[88vh] w-screen'>
+    <motion.div exit={{ opacity: 0 }} key="about" className='pt-[5vh] font-kollektif text-[3.4vw] leading-tight flex flex-col justify-center items-center text-center h-[50vh] lg:h-[88vh] w-screen'>
         <div className='overflow-hidden'><motion.div  variants={iamVariants} initial="hidden" animate="visible">about me</motion.div></div>
 
         <motion.div variants={frameVariants} initial="hidden" animate="visible" className='about-text border-y-2 border-black overflow-hidden w-screen flex flex-col justify-center items-center'>
