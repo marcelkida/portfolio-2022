@@ -109,8 +109,7 @@ body{
 .ghost-container {
 
     @media (max-width: #{$desktop}) {
-        position: absolute;
-        height: 100%;
+        height: 100vh;
         width: 96vw;
         top: 0;
         z-index: 0;
@@ -128,9 +127,7 @@ body{
 
 .ghost {
     @media (max-width: #{$desktop}) {
-        position: absolute;
-        overflow: hidden;
-        top: -10%;
+        top: -30%;
     }
 
     @media (min-width: #{$desktop}) {

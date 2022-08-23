@@ -15,15 +15,18 @@ import Project from './components/Work/Project';
 import { AnimatePresence } from 'framer-motion';
 import AnimatedRoutes from './AnimatedRoutes';
 import Footer from './components/Home/Footer';
+import { isMobile } from 'react-device-detect';
 
 
 function App() {
+  console.log("here", isMobile)
+
   
   return (
     <Router>
-      <Navbar />
-      <AnimatedRoutes></AnimatedRoutes>
-      <Footer />
+      <Navbar isMobile={isMobile}/>
+      <AnimatedRoutes isMobile={isMobile}></AnimatedRoutes>
+      <Footer isMobile={isMobile} />
 
 
     </Router>

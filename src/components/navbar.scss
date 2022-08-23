@@ -4,6 +4,9 @@ $desktop: 1024px;
     @media (max-width: #{$desktop}) {
         display: flex;
         justify-content: space-between;
+        z-index: 50;
+        background-color: white;
+
         align-items: center;
         width: 100vw;
         height: 10vh;
@@ -30,6 +33,8 @@ $desktop: 1024px;
 .nav-left {
     @media (max-width: #{$desktop}) {
         margin-left: 2vw;
+
+
     }
 
     @media (min-width: #{$desktop}) {
@@ -40,6 +45,9 @@ $desktop: 1024px;
 .nav-right {
     @media (max-width: #{$desktop}) {
         margin-right: 2vw;
+        width: 100%;
+        display: flex;
+        justify-content: end;
     }
 
     @media (min-width: #{$desktop}) {
