@@ -255,7 +255,7 @@ function Home() {
 
 
     return (
-        <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 2 }} key="home">
+        <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} exit={{ y: -document.body.scrollHeight*2 }} transition={{ duration: .5, ease: 'easeIn' }} key="home">
             <motion.div className='loader' id='loader'
                 variants={box}
                 animate={(isLoaded && animComp) ? "animate" : "initial"}

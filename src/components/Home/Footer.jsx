@@ -8,7 +8,7 @@ function Footer() {
         <a href="mailto:email@example.com" target="_blank">kida.marcel@gmail.com</a>
       </div>
       <div>
-        <a href="https://www.instagram.com/kida.marcel/" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/kida.marcel/" target="_blank">instagram</a>
       </div>
       <div>
       <a href="https://github.com/marcelkida" target="_blank">github</a>
