@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/portfolio-2022/static/css/main.49e81144.css",
+    "main.js": "/portfolio-2022/static/js/main.3908af42.js",
+    "static/js/526.283a9c0e.chunk.js": "/portfolio-2022/static/js/526.283a9c0e.chunk.js",
+    "static/js/232.efed7731.chunk.js": "/portfolio-2022/static/js/232.efed7731.chunk.js",
+    "static/js/787.d5360f6f.chunk.js": "/portfolio-2022/static/js/787.d5360f6f.chunk.js",
+    "static/media/vo2gif.gif": "/portfolio-2022/static/media/vo2gif.58d663d169f4a3146662.gif",
+    "static/media/playbook.gif": "/portfolio-2022/static/media/playbook.621491bda7a9f57fa886.gif",
+    "static/media/counselab.gif": "/portfolio-2022/static/media/counselab.53c47e61757de7976815.gif",
+    "static/media/vo2shot.png": "/portfolio-2022/static/media/vo2shot.733e35423a570cc08745.png",
+    "static/media/yawn-anim.gif": "/portfolio-2022/static/media/yawn-anim.a5df1808ccb8352e8c76.gif",
+    "static/media/pennplaybook.png": "/portfolio-2022/static/media/pennplaybook.e97ddddec792e91b8a85.png",
+    "static/media/Kollektif-Bold.ttf": "/portfolio-2022/static/media/Kollektif-Bold.d97641da7b1897b8ee19.ttf",
+    "static/media/Kollektif-BoldItalic.ttf": "/portfolio-2022/static/media/Kollektif-BoldItalic.577d896c027c07a14345.ttf",
+    "static/media/MarcelKidaResume.pdf": "/portfolio-2022/static/media/MarcelKidaResume.d8bb2e9a753a7613c96a.pdf",
+    "static/media/Kollektif.ttf": "/portfolio-2022/static/media/Kollektif.33fdfd1d0f21c0c8283b.ttf",
+    "static/media/Kollektif-Italic.ttf": "/portfolio-2022/static/media/Kollektif-Italic.0e7ef841e38b13bbac89.ttf",
+    "static/media/gerbil.otf": "/portfolio-2022/static/media/gerbil.50d7e40932f6a9463425.otf",
+    "static/media/vo2.png": "/portfolio-2022/static/media/vo2.4a94ed7b22da0764438b.png",
+    "index.html": "/portfolio-2022/index.html",
+    "main.49e81144.css.map": "/portfolio-2022/static/css/main.49e81144.css.map",
+    "main.3908af42.js.map": "/portfolio-2022/static/js/main.3908af42.js.map",
+    "526.283a9c0e.chunk.js.map": "/portfolio-2022/static/js/526.283a9c0e.chunk.js.map",
+    "232.efed7731.chunk.js.map": "/portfolio-2022/static/js/232.efed7731.chunk.js.map",
+    "787.d5360f6f.chunk.js.map": "/portfolio-2022/static/js/787.d5360f6f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49e81144.css",
+    "static/js/main.3908af42.js"
+  ]
+}
