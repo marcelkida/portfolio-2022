@@ -82,7 +82,7 @@ function Work2(props) {
                 <motion.div className='border-t-2 border-black text-[3vw]  mt-12 sticky top-[5vh] bg-white vo2-section'
                     whileHover={{
                         height: "18vw",
-                    }} onMouseEnter={() => setHover(1)} onMouseLeave={() => setHover(0)}>
+                    }} onMouseEnter={() => setHover(1)} onMouseLeave={() => setHover(0)} >
                     <div className='flex justify-between'>
                         <div className='flex justify-between items-end'>
                             <div className='mr-[10vw] w-32 pl-[2vw] align-text-bottom'>

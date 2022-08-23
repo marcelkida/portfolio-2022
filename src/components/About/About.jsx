@@ -68,7 +68,7 @@ function About() {
           visible: {
             opacity: 1,
             transition: {
-              duration: 0,
+              duration: .5,
             }
           }
         }}>
@@ -114,6 +114,21 @@ function About() {
     }
   };
 
+  const iamVariants2 = {
+    hidden: {
+      y: 100
+    },
+    visible: {
+      y: 0,
+
+      transition: {
+        duration: .5,
+        delay: 7,
+        ease: "circOut"
+      }
+    }
+  };
+
 
 
 
@@ -130,6 +145,7 @@ function About() {
           <Slot dir={1} k={4} text={["contact", "me", "with", "the", "links", "below"]} />
 
         </motion.div>
+        <div className='overflow-hidden mt-[4vh]'><motion.div className='overflow-hidden lg:text-[2vw] text-[3.4vw]' variants={iamVariants2} initial="hidden" animate="visible" >Also I remake my website every year. Check out last year's <a className='' href='https://marcelkida.github.io/portfolio-2021/' target={"_blank"}><span className='text-[blue]'>portfolio.</span></a></motion.div></div>
     </motion.div>
   )
 }
