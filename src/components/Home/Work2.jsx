@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import vo2gif from "../../img/vo2gif.gif";
 import counselabgif from "../../img/counselab.gif";
 import playbookgif from "../../img/playbook.gif";
-import cyber from "../../img/cyber.gif";
+import cyber from "../../img/cyber2.gif";
 
 import { useState, useEffect } from "react";
 import "./work2.scss";
@@ -103,7 +103,37 @@ function Work2(props) {
       )}
       <p href="" target="_blank">
         <motion.div
-          className="border-t-2 border-black text-[3vw]  mt-12 sticky top-[5vh] bg-white vo2-section"
+          className="border-t-2 border-black text-[3vw] sticky top-[5vh] 5vh bg-white vo2-section"
+          whileHover={{
+            height: "18vw",
+          }}
+          onMouseEnter={() => setHover(-1)}
+          onMouseLeave={() => setHover(0)}
+        >
+          <div className="flex justify-between">
+            <div className="flex justify-between items-end">
+              <div className="mr-[10vw] w-32 pl-[2vw] align-text-bottom">
+                00
+              </div>
+              <div className="">Google</div>
+            </div>
+            <div className="pr-[2vw]">2024</div>
+          </div>
+          {hover == -1 && (
+            <>
+              <div className="pl-[2vw] text-[1vw] opacity-70">
+                Software Engineering Intern | Gmail.
+              </div>
+              <div className="pl-[2vw]">
+                Worked in the Gmail Web team to implement Emoji Search in Gmail.
+              </div>
+            </>
+          )}
+        </motion.div>
+      </p>
+      <p href="" target="_blank">
+        <motion.div
+          className="border-t-2 border-black text-[3vw] sticky top-[5vh] bg-white vo2-section"
           whileHover={{
             height: "18vw",
           }}
@@ -132,7 +162,7 @@ function Work2(props) {
           )}
         </motion.div>
       </p>
-      <a href="https://www.vo2.fans/" target="_blank">
+      <p target="_blank">
         <motion.div
           className="border-t-2 border-black text-[3vw]  sticky top-[5vh] bg-white vo2-section"
           whileHover={{
@@ -164,8 +194,8 @@ function Work2(props) {
             </>
           )}
         </motion.div>
-      </a>
-      <a href="http://www.pennplaybook.com/" target="_blank">
+      </p>
+      <p target="_blank">
         <motion.div
           className="border-t-2 border-black text-[3vw]   sticky top-[5vh] bg-white"
           whileHover={{
@@ -194,7 +224,7 @@ function Work2(props) {
             </>
           )}
         </motion.div>
-      </a>
+      </p>
       <p href="https://counselab.com/" target="_blank">
         <motion.div
           className="border-t-2 border-black text-[3vw]   sticky top-[5vh] bg-white"
